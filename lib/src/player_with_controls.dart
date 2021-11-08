@@ -48,7 +48,6 @@ class PlayerWithControls extends StatelessWidget {
     return Center(
       child: SizedBox(
         width: MediaQuery.of(context).size.width,
-        height: Theme.of(context).platform == TargetPlatform.android ? 48 : 75,
         child: _buildPlayerWithControls(chewieController, context),
       ),
     );

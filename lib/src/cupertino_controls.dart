@@ -63,11 +63,12 @@ class _CupertinoControlsState extends State<CupertinoControls>
     final orientation = MediaQuery.of(context).orientation;
     final barHeight = orientation == Orientation.portrait ? 30.0 : 47.0;
     final buttonPadding = orientation == Orientation.portrait ? 16.0 : 24.0;
+    final showTopBar = chewieController.allowMuting;
 
     return Column(
       children: <Widget>[
-        _buildTopBar(
-            backgroundColor, iconColor, barHeight, buttonPadding),
+        if (showTopBar)
+          _buildTopBar(backgroundColor, iconColor, barHeight, buttonPadding),
         _buildBottomBar(backgroundColor, iconColor, barHeight),
       ],
     );
